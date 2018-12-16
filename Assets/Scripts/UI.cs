@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Advertisements;
+
 public class UI : MonoBehaviour {
     public void ButtonStart()
     {
@@ -10,5 +12,38 @@ public class UI : MonoBehaviour {
     public void ButtonHighscore()
     {
         SceneManager.LoadScene("Highscores");
+    }
+    public void Restart()
+    {
+        Advertisement.Show(new ShowOptions() { resultCallback = HandleShowResult });
+        if (Advertisement.isShowing)
+        {
+            PlayerPrefs.SetFloat("AdCount", (PlayerPrefs.GetFloat("AdCount") + 1));
+        }
+        StartCoroutine("Wait");
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitUntil(() => !Advertisement.isShowing);
+        SceneManager.LoadScene("Game");
+    }
+
+    private void HandleShowResult(ShowResult result)
+    {
+        switch (result)
+        {
+            case ShowResult.Finished:
+                Debug.Log("The ad was successfully shown.");
+                PlayerPrefs.SetFloat("FullAdCount", PlayerPrefs.GetFloat("FullAdCount") + 1);
+                break;
+            case ShowResult.Skipped:
+                Debug.Log("The ad was skipped before reaching the end.");
+                PlayerPrefs.SetFloat("PartialAdCount", PlayerPrefs.GetFloat("PartialAdCount") + 1);
+                break;
+            case ShowResult.Failed:
+                Debug.LogError("The ad failed to be shown.");
+                break;
+        }
     }
 }

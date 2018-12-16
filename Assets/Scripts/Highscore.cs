@@ -28,10 +28,10 @@ public class Highscore : MonoBehaviour {
     public void Update()
     {
         PlayerPrefs.SetString("Name" + SelectedScore.ToString(), Username.text.ToString());
-        GameObject.Find("Score 1").GetComponent<Text>().text = (PlayerPrefs.GetString("Name1") + " - " + PlayerPrefs.GetFloat("Score1").ToString() + "s");
-        GameObject.Find("Score 2").GetComponent<Text>().text = (PlayerPrefs.GetString("Name2") + " - " + PlayerPrefs.GetFloat("Score2").ToString() + "s");
-        GameObject.Find("Score 3").GetComponent<Text>().text = (PlayerPrefs.GetString("Name3") + " - " + PlayerPrefs.GetFloat("Score3").ToString() + "s");
-        GameObject.Find("Score 4").GetComponent<Text>().text = (PlayerPrefs.GetString("Name4") + " - " + PlayerPrefs.GetFloat("Score4").ToString() + "s");
+        GameObject.Find("Score 1").GetComponent<Text>().text = (PlayerPrefs.GetString("Name1", "Empty") + " - " + PlayerPrefs.GetFloat("Score1").ToString() + "s");
+        GameObject.Find("Score 2").GetComponent<Text>().text = (PlayerPrefs.GetString("Name2", "Empty") + " - " + PlayerPrefs.GetFloat("Score2").ToString() + "s");
+        GameObject.Find("Score 3").GetComponent<Text>().text = (PlayerPrefs.GetString("Name3", "Empty") + " - " + PlayerPrefs.GetFloat("Score3").ToString() + "s");
+        GameObject.Find("Score 4").GetComponent<Text>().text = (PlayerPrefs.GetString("Name4", "Empty") + " - " + PlayerPrefs.GetFloat("Score4").ToString() + "s");
     }
 
     public void Clear()
