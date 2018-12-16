@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Highscore : MonoBehaviour {
-    public Text Username;
+    public InputField Username;
     private int SelectedScore;
     private void Awake()
     {
