@@ -77,6 +77,11 @@ public class Catapult : MonoBehaviour {
             Projectiles[Projectiles.Count - 1].transform.parent = null;
             Vector2 A = (coord1 - coord2);
             Vector2 B = A.normalized;
+            if (B.x > 0)
+            {
+                B.x = B.x * -1;
+                B.y = B.y * -1;
+            }
             Projectiles[Projectiles.Count - 1].GetComponent<Rigidbody2D>().AddForce((B) * objectForces[selectedProjectile]);
             state = 1;
         }
