@@ -15,17 +15,24 @@ public class UI : MonoBehaviour {
     }
     public void Restart()
     {
-        Advertisement.Show(new ShowOptions() { resultCallback = HandleShowResult });
-        if (Advertisement.isShowing)
-        {
-            PlayerPrefs.SetFloat("AdCount", (PlayerPrefs.GetFloat("AdCount") + 1));
-        }
-        StartCoroutine("Wait");
+        PlayerPrefs.Save();
+        StartCoroutine("Ads");
     }
 
-    IEnumerator Wait()
+    IEnumerator Ads()
     {
-        yield return new WaitUntil(() => !Advertisement.isShowing);
+        if (!Advertisement.IsReady())
+        {
+            yield return new WaitForSeconds(1);
+        }
+
+        if (Advertisement.IsReady())
+        {
+            Advertisement.Show(new ShowOptions() { resultCallback = HandleShowResult });
+            PlayerPrefs.SetFloat("AdCount", (PlayerPrefs.GetFloat("AdCount") + 1));
+            yield return new WaitUntil(() => !Advertisement.isShowing);
+        }
+
         SceneManager.LoadScene("Game");
     }
 
