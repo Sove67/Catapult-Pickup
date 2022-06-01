@@ -14,19 +14,19 @@ Title Page
 ![Screenshot 1](./Screenshots/CatapultPickup%20Screenshot%201.jpg?raw=true)
 
 Game Start
-![Screenshot 1](./Screenshots/CatapultPickup%20Screenshot%202.jpg?raw=true)
+![Screenshot 2](./Screenshots/CatapultPickup%20Screenshot%202.jpg?raw=true)
 
 Chair Projectile
-![Screenshot 1](./Screenshots/CatapultPickup%20Screenshot%203.jpg?raw=true)
+![Screenshot 3](./Screenshots/CatapultPickup%20Screenshot%203.jpg?raw=true)
 
 Microwave Projectile
-![Screenshot 1](./Screenshots/CatapultPickup%20Screenshot%204.jpg?raw=true)
+![Screenshot 4](./Screenshots/CatapultPickup%20Screenshot%204.jpg?raw=true)
 
 Fridge Projectile
-![Screenshot 1](./Screenshots/CatapultPickup%20Screenshot%205.jpg?raw=true)
+![Screenshot 5](./Screenshots/CatapultPickup%20Screenshot%205.jpg?raw=true)
 
 Game Loss
-![Screenshot 1](./Screenshots/CatapultPickup%20Screenshot%206.jpg?raw=true)
+![Screenshot 6](./Screenshots/CatapultPickup%20Screenshot%206.jpg?raw=true)
 
 Highscores
-![Screenshot 1](./Screenshots/CatapultPickup%20Screenshot%207.jpg?raw=true)
+![Screenshot 7](./Screenshots/CatapultPickup%20Screenshot%207.jpg?raw=true)
